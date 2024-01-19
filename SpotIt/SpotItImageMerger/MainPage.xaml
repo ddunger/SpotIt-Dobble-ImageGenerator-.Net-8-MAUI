@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Class="SpotItImageMerger.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout HorizontalOptions="Start" >
+            <Label  Text="Image Merger for Spot It! (Dobble)" FontSize="26" FontAttributes="Bold"  Margin="10,10,0,30" />
+            
+            <HorizontalStackLayout>
+                <Button Text="Select Save Location" Clicked="OnSelectFolderClicked"  HorizontalOptions="Start" Margin="10,0,0,15" Background="RoyalBlue" />
+                <Label Text="Output path: " VerticalTextAlignment="Center" Margin="10,0,0,15" />
+                <Label Text="{Binding selectedSaveLocation}" VerticalTextAlignment="Center" Margin="0,0,0,15"/>
+            </HorizontalStackLayout>
+
+
+            <HorizontalStackLayout>
+                <Button Text="Import Images" Clicked="OnImportImagesClicked" HorizontalOptions="Start" Margin="10,0,0,15" Background="RoyalBlue" />
+                <Label Text="Randomly rotate images" Grid.Column="1" VerticalTextAlignment="Center" Margin="10,0,0,15" />
+                <CheckBox x:Name="rotateCheckbox" Grid.Column="0" VerticalOptions="Center" IsChecked="{Binding rotationEnabled}" Margin="0,0,0,15"  />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <Label Text="Number of images added:" Grid.Column="1" VerticalOptions="Center" VerticalTextAlignment="Center" Margin="15,0,0,20"  />
+                <Label Text="{Binding imageNumber}" Grid.Column="1" VerticalOptions="Center" VerticalTextAlignment="Center" Margin="5,0,0,20" FontAttributes="Bold" />
+            </HorizontalStackLayout>
+
+
+            <HorizontalStackLayout>
+                <Button Text="Create 13 Cards" Clicked="OnCreateCards13Clicked" HorizontalOptions="Center" Margin="10,0,0,10" Background="RoyalBlue" />
+                <Button Text="Create 31 Cards" Clicked="OnCreateCards31Clicked" HorizontalOptions="Center" Margin="10,0,0,10" Background="RoyalBlue" />
+                <Button Text="Create 57 Cards" Clicked="OnCreateCards57Clicked" HorizontalOptions="Center" Margin="10,0,0,10" Background="RoyalBlue" />
+            </HorizontalStackLayout>
+          
+
+
+            <FlexLayout Margin="10,5,10,5" x:Name="Thumbnails" Direction="Row" Wrap="Wrap" JustifyContent="SpaceBetween" AlignItems="Start" AlignContent="Start"/>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
